@@ -1,24 +1,17 @@
-import React from "react"
-import ReactDom from "react-dom"
+import React from 'react';
+import ReactDOM from 'react-dom';
+import './index.css';
+import App from './App';
+import reportWebVitals from './reportWebVitals';
 
-let App = () => {
-  const [theme, settheme] = React.useState("red")
-  
-  const OnClickHandler = () => {
-    settheme(theme === "red" ? "blue" : "red");
-  }
-  return (
-    <div>
-      <Text theme={theme} />
-      <button onClick={OnClickHandler}>Change theme</button>
-    </div>
-  )
-}
+ReactDOM.render(
+  <React.StrictMode>
+    <App />
+  </React.StrictMode>,
+  document.getElementById('root')
+);
 
-let Text = ({theme}) => {
-  return (
-    <h1 style={{ color: `${theme}` }}>{theme}</h1>
-  )
-}
-
-ReactDom.render(<App/>,document.querySelector('#root'))
+// If you want to start measuring performance in your app, pass a function
+// to log results (for example: reportWebVitals(console.log))
+// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
+reportWebVitals();
