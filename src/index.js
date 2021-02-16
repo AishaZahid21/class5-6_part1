@@ -2,9 +2,15 @@ import React from "react"
 import ReactDom from "react-dom"
 
 let App = () => {
+  const [theme, settheme] = React.useState("red")
+  
+  const OnClickHandler = () => {
+    settheme(theme === "red" ? "blue" : "red");
+  }
   return (
     <div>
-      <Text theme="yellow" />
+      <Text theme={theme} />
+      <button onClick={OnClickHandler}>Change theme</button>
     </div>
   )
 }
